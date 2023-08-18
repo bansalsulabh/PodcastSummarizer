@@ -22,6 +22,7 @@ def main():
 
         # Right section - Newsletter content
         st.header("Newsletter Content")
+        st.image("podcast_logo.png", use_column_width=True)
 
         # Display the podcast title
         st.subheader("Episode Title")
