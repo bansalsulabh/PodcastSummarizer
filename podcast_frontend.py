@@ -10,6 +10,20 @@ def main():
 
     # Left section - Input fields
     st.sidebar.header("Podcast RSS Feeds")
+    dark_mode = st.sidebar.checkbox("Dark Mode")
+    # Apply dark mode if selected
+    if dark_mode:
+        st.write(
+            """
+            <style>
+            body {
+                background-color: #121212;
+                color: white;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
 
     # Dropdown box
     st.sidebar.subheader("Available Podcasts Feeds")
