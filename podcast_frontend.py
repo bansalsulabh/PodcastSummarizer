@@ -10,6 +10,7 @@ def main():
 
     # Left section - Input fields
     st.sidebar.header("Podcast RSS Feeds")
+    dark_mode = st.sidebar.checkbox("Dark Mode")
 
     # Dropdown box
     st.sidebar.subheader("Available Podcasts Feeds")
@@ -80,6 +81,19 @@ def main():
         for moment in key_moments.split('\n'):
             st.markdown(
                 f"<p style='margin-bottom: 5px;'>{moment}</p>", unsafe_allow_html=True)
+        # Apply dark mode if selected
+    if dark_mode:
+        st.write(
+            """
+            <style>
+            body {
+                background-color: #121212;
+                color: white;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
 
 def create_dict_from_json_files(folder_path):
     json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
